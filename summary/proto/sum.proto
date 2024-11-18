@@ -1,0 +1,18 @@
+syntax  = "proto3";
+
+package summary;
+
+option go_package = "github.com/MhdAmir/grpc-go-course/summary/proto";
+
+message SummaryRequest {
+    int32 first_number = 1;
+    int32 last_number = 2;
+}
+
+message SummaryResponse {
+    int32 result = 1;
+}
+
+service SummaryService{
+    rpc Summary (SummaryRequest) returns (SummaryResponse);
+}
